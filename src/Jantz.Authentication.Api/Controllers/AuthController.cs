@@ -28,7 +28,7 @@ namespace Jantz.Authentication.Api.Controllers
             if (result.IsValid)
                 return ApiResponse(HttpStatusCode.OK, result.Response);
 
-            return ApiResponse(HttpStatusCode.Unauthorized, result.DomainNotification.Errors);
+            return ApiResponse(HttpStatusCode.Unauthorized, errors: result.DomainNotification.Errors);
         }
 
         [AllowAnonymous]
@@ -38,9 +38,9 @@ namespace Jantz.Authentication.Api.Controllers
             var result = await _mediator.Send(command);
 
             if (result.IsValid)
-                return ApiResponse(HttpStatusCode.OK);
+                return ApiResponse(HttpStatusCode.OK, result.Response);
 
-            return ApiResponse(HttpStatusCode.BadRequest, result.DomainNotification.Errors);
+            return ApiResponse(HttpStatusCode.BadRequest, errors: result.DomainNotification.Errors);
         }
 
         [HttpGet]

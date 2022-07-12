@@ -34,6 +34,8 @@ namespace Jantz.Authentication.Api.Controllers
                     return NotFound(response);
                 case HttpStatusCode.BadRequest:
                     return BadRequest(response);
+                case HttpStatusCode.Unauthorized:
+                    return Unauthorized(response);
                 case HttpStatusCode.NoContent:
                 default:
                     return NoContent();
