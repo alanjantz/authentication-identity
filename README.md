@@ -1,5 +1,8 @@
-# authentication-identity
+<h1 align="center">
+🔐<br>authentication-identity
+
 [![GitHub Action Build Status][gh-actions-image]][gh-actions-url]
+</h1>
 
 Authentication Project using .NET 6 with EF Core Identity
 
