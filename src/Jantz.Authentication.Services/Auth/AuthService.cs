@@ -88,7 +88,7 @@ namespace Jantz.Authentication.Services.Auth
             var key = Encoding.ASCII.GetBytes(_jwtSettings.Secret);
 
             DateTime creationDate = DateTime.Now,
-                     expirationDate = creationDate + TimeSpan.FromSeconds(_jwtSettings.ExpirationMinutes);
+                     expirationDate = creationDate + TimeSpan.FromSeconds(_jwtSettings.ExpirationSeconds);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
